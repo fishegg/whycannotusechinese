@@ -12,8 +12,8 @@ Name:       harbour-cantonferry
 %{!?qtc_qmake5:%define qtc_qmake5 %qmake5}
 %{!?qtc_make:%define qtc_make make}
 %{?qtc_builddir:%define _builddir %qtc_builddir}
-Summary:    Canton Ferry
-Version:    0.1
+Summary:    广州水上巴士
+Version:    1.0
 Release:    1
 Group:      Qt/Qt
 License:    LICENSE
@@ -28,7 +28,7 @@ BuildRequires:  pkgconfig(Qt5Quick)
 BuildRequires:  desktop-file-utils
 
 %description
-Short description of my SailfishOS Application
+没有任何功能的广州水上巴士查询程序
 
 
 %prep

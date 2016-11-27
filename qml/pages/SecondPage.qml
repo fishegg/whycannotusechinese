@@ -124,6 +124,7 @@ Page {
                 text: qsTr("推荐网站和程序")
             }
             Button {
+                anchors.horizontalCenter: parent.horizontalCenter
                 text: "广州市客轮公司官网"
                 onClicked: Qt.openUrlExternally(gzlcurl)
             }

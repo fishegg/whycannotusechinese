@@ -34,7 +34,7 @@ import Sailfish.Silica 1.0
 CoverBackground {
     CoverPlaceholder {
         icon.source: "../items/harbour-cantonferry.png"
-        text: qsTr("广州<br>水上巴士")
+        text: qsTr("广州水巴")
     }
 
     /*Label {

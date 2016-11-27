@@ -4,7 +4,7 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>广州&lt;br&gt;水上巴士</source>
+        <source>广州水巴</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
