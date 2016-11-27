@@ -34,24 +34,105 @@ import Sailfish.Silica 1.0
 
 Page {
     id: page
-    SilicaListView {
-        id: listView
-        model: 20
-        anchors.fill: parent
-        header: PageHeader {
-            title: qsTr("Nested Page")
-        }
-        delegate: BackgroundItem {
-            id: delegate
+    property string gzlcurl: "http://www.prol.com.cn/"
+    //property string xingxuntongurl: "http://sj.qq.com/myapp/detail.htm?apkName=gci.com.cn.ui"
 
-            Label {
-                x: Theme.paddingLarge
-                text: qsTr("Item") + " " + index
-                anchors.verticalCenter: parent.verticalCenter
-                color: delegate.highlighted ? Theme.highlightColor : Theme.primaryColor
+    SilicaFlickable {
+        id: flickable
+        width: parent.width
+        contentHeight: column.height
+
+        Column {
+            id: column
+            width: parent.width
+            spacing: Theme.paddingSmall
+            PageHeader {
+                title: qsTr("程序信息")
             }
-            onClicked: console.log("Clicked " + index)
+            Image {
+                anchors.horizontalCenter: parent.horizontalCenter
+                source: "../items/harbour-cantonferry.png"
+            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: qsTr("广州水上巴士")
+                font.pixelSize: Theme.fontSizeMedium
+                font.bold: true
+            }
+            Label {
+                anchors.horizontalCenter: parent.horizontalCenter
+                text: "1.0"
+            }
+            /*SectionHeader {
+                text: qsTr("Credit")
+            }
+            Label {
+                x: Theme.paddingMedium
+                width: parent.width - 2 * Theme.paddingMedium
+                wrapMode: Text.WordWrap
+                text: qsTr("Thanks Simo Mattila who made TinyTodo and Arno Dekker who made Worldclock. Thanks BirdZhang, Chanxi, Saber and Yaliang for helping me in coding.")
+            }
+            Label {
+                x: Theme.paddingMedium
+                width: parent.width - 2 * Theme.paddingMedium
+                wrapMode: Text.WordWrap
+                text: qsTr("Thanks Meng Ying Jue Huan for making the icon below.")
+            }
+            Image {
+                id: previousicon
+                anchors.horizontalCenter: parent.horizontalCenter
+                width: 86
+                source: "harbour-cantonferry.png"
+            }*/
+            SectionHeader {
+                text: qsTr("参考程序")
+            }
+            Label {
+                x: Theme.paddingMedium
+                text: "十花的BDMusic"
+            }
+            Label {
+                x: Theme.paddingMedium
+                text: "steffen.foerster的CodeReader"
+            }
+            SectionHeader {
+                text: qsTr("作者")
+            }
+            Label {
+                x: Theme.paddingMedium
+                text: "fishegg"
+            }
+            /*SectionHeader {
+                text: qsTr("Known Issues")
+            }
+            Label {
+                x: Theme.paddingMedium
+                width: parent.width - 2 * Theme.paddingMedium
+                text: qsTr("Remaining/passed days don't update at 00:00")
+                wrapMode: Text.WordWrap
+            }
+            SectionHeader {
+                text: qsTr("Translators")
+            }
+            Label {
+                x: Theme.paddingMedium
+                width: parent.width - 2 * Theme.paddingMedium
+                text: "German - heubergen"
+                wrapMode: Text.WordWrap
+            }*/
+            SectionHeader {
+                text: qsTr("推荐网站和程序")
+            }
+            Button {
+                text: "广州市客轮公司官网"
+                onClicked: Qt.openUrlExternally(gzlcurl)
+            }
+            /*Button {
+                text: "下载行讯通"
+                onClicked: Qt.openUrlExternally(xingxuntongurl)
+            }*/
         }
+
         VerticalScrollDecorator {}
     }
 }

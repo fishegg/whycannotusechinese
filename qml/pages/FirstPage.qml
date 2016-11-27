@@ -64,7 +64,7 @@ Page {
             }
             MenuItem {
                 text: "程序信息"
-                onClicked: pageStack.push(Qt.resolvedUrl("Test.qml"))
+                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
             }
         }
 
@@ -85,7 +85,8 @@ Page {
                     Label {
                         width: firstpagecolumn.width / 2
                         horizontalAlignment: Text.AlignHCenter
-                        color: slideshowview.currentIndex === index ? Theme.highlightColor : Theme.secondaryHighlightColor
+                        //font.bold: true
+                        color: slideshowview.currentIndex === index ? Theme.highlightColor : Theme.secondaryColor
                         text: modelData
                     }
                 }

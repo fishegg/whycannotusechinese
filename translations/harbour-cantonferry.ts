@@ -4,7 +4,7 @@
 <context>
     <name>CoverPage</name>
     <message>
-        <source>My Cover</source>
+        <source>广州&lt;br&gt;水上巴士</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
@@ -33,11 +33,23 @@
 <context>
     <name>SecondPage</name>
     <message>
-        <source>Nested Page</source>
+        <source>程序信息</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>Item</source>
+        <source>广州水上巴士</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>参考程序</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>作者</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>推荐网站和程序</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

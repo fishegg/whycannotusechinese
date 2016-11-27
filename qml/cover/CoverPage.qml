@@ -32,13 +32,18 @@ import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
-    Label {
+    CoverPlaceholder {
+        icon.source: "../items/harbour-cantonferry.png"
+        text: qsTr("广州<br>水上巴士")
+    }
+
+    /*Label {
         id: label
         anchors.centerIn: parent
         text: qsTr("My Cover")
-    }
+    }*/
 
-    CoverActionList {
+    /*CoverActionList {
         id: coverAction
 
         CoverAction {
@@ -48,7 +53,7 @@ CoverBackground {
         CoverAction {
             iconSource: "image://theme/icon-cover-pause"
         }
-    }
+    }*/
 }
 
 
