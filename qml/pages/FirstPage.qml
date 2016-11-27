@@ -30,128 +30,80 @@
 
 import QtQuick 2.0
 import Sailfish.Silica 1.0
-
+import harbour.cantonferry.settings 1.0
+import "../models"
+import "../items"
 
 Page {
-    id: page
+    id: firstpage
+    property bool accepted: settings.get_accepted_status()
 
-    // To enable PullDownMenu, place our content in a SilicaFlickable
+    SettingsObject {
+        id: settings
+    }
+
+    Timer {
+        interval: 50
+        running: accepted ? false : true
+        repeat: true
+        triggeredOnStart: true
+        onTriggered: { stop()
+            pageStack.push(Qt.resolvedUrl("DisclaimerDialog.qml"))
+        }
+    }
+
     SilicaFlickable {
+        id: firstpageflickable
         anchors.fill: parent
 
-        // PullDownMenu and PushUpMenu must be declared in SilicaFlickable, SilicaListView or SilicaGridView
         PullDownMenu {
+            id: firstpagepulldown
             MenuItem {
-                text: qsTr("Show Page 2")
-                onClicked: pageStack.push(Qt.resolvedUrl("SecondPage.qml"))
+                text: "免责声明"
+                onClicked: pageStack.push(Qt.resolvedUrl("DisclaimerDialog.qml"))
+            }
+            MenuItem {
+                text: "程序信息"
+                onClicked: pageStack.push(Qt.resolvedUrl("Test.qml"))
             }
         }
 
-        // Tell SilicaFlickable the height of its content.
-        contentHeight: column.height
-
-        // Place our content in a Column.  The PageHeader is always placed at the top
-        // of the page, followed by our content.
         Column {
-            id: column
-
+            id: firstpagecolumn
             width: parent.width
             spacing: Theme.paddingSmall
+
             PageHeader {
-                id:　pageheader
+                id: firstpageheader
                 title: qsTr("广州水上巴士")
             }
 
-            /*Label {
-                x: Theme.paddingLarge
-                text: qsTr("Hello Sailors")
-                color: Theme.secondaryHighlightColor
-                font.pixelSize: Theme.fontSizeExtraLarge
-            }*/
-
-            TextField {
-                id: searchtext
-                width: parent.width
-                placeholderText: "搜索码头"
-            }
-
-            /*Rectangle {
-                //anchors.bottom: silicalistview.top
-                width: page.width
-                height: 10
-                x: 0
-                color: "black"
-                border.color: "black"
-            }*/
-
-            SilicaListView {
-                id: silicalistview
-                model: listmodel
-
-                width: parent.width
-                height: page.height - pageheader.height - searchtext.height
-
-                clip: true
-
-                header: PageHeader { title: "航线" }
-
-                delegate: ListItem {
-                    id:listitem
-
-                    width: parent.width
-
-                    onClicked: {
-                        pageStack.push(Qt.resolvedUrl("DetailsPage.qml"))
-                    }
-
+            Row {
+                id: firstpagerow
+                Repeater {
+                    model: [qsTr("航线"), qsTr("码头")]
                     Label {
-                        text: route
-                        x: Theme.paddingLarge
-                        anchors.verticalCenter: parent.verticalCenter
+                        width: firstpagecolumn.width / 2
+                        horizontalAlignment: Text.AlignHCenter
+                        color: slideshowview.currentIndex === index ? Theme.highlightColor : Theme.secondaryHighlightColor
+                        text: modelData
                     }
                 }
+            }
 
-                VerticalScrollDecorator {}
-            }
-        }
+            SlideshowView {
+                id: slideshowview
+                clip: true
+                //anchors.top: firstpagecolumn.bottom
+                height: firstpage.height - firstpageheader.height - firstpagerow.height
+                width: firstpage.width
+                itemHeight: height
+                itemWidth: width
 
-        ListModel　{
-            id: listmodel
-            ListElement {
-                route: "S1"
-            }
-            ListElement {
-                route: "S2"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
-            }
-            ListElement {
-                route: "S3"
+                model: VisualItemModel {
+                    RoutesListItem {}
+                    WharfsListItem {}
+                }
             }
         }
     }

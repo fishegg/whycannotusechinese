@@ -9,13 +9,24 @@
     </message>
 </context>
 <context>
+    <name>DisclaimerDialog</name>
+    <message>
+        <source>免责声明</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
     <name>FirstPage</name>
     <message>
-        <source>Show Page 2</source>
-        <translation>Zur Seite 2</translation>
+        <source>广州水上巴士</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <source>广州水上巴士</source>
+        <source>航线</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>码头</source>
         <translation type="unfinished"></translation>
     </message>
 </context>

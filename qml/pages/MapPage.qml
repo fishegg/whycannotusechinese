@@ -6,6 +6,6 @@ Page {
         id: webView
 
         anchors.fill: parent
-        url: "http://ditu.amap.com"
+        url: "http://map.sogou.com/"
     }
 }

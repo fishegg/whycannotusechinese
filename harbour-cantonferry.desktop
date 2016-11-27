@@ -3,7 +3,7 @@ Type=Application
 X-Nemo-Application-Type=silica-qt5
 Icon=harbour-cantonferry
 Exec=harbour-cantonferry
-Name=harbour-cantonferry
+Name=Canton Ferry
 # translation example:
 # your app name in German locale (de)
 Name[de]=harbour-cantonferry

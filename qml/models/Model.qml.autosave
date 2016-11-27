@@ -1,0 +1,18 @@
+import QtQuick 2.0
+import Sailfish.Silica 1.0
+
+ListModel　{
+    id: s1ea
+    property bool termial: false
+    ListElement {
+        wharf: "金沙洲"
+        terminal: true
+    }
+    ListElement {
+        wharf: "黄沙"
+    }
+    ListElement {
+        wharf: "西堤"
+        terminal: true
+    }
+}
