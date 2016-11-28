@@ -46,14 +46,16 @@ Page {
 
     Timer {
         interval: 50
-        running: (accepted || !updated) ? false : true
+        running: accepted && !updated ? false : true
         repeat: true
         triggeredOnStart: true
         onTriggered: { stop()
+            settings.clean_conf()
             if(updated) {
-                settings.clean_conf()
+                console.log("if updated")
                 settings.set_version(version)
             }
+            console.log("accepted "+accepted+" updated "+updated)
             pageStack.push(Qt.resolvedUrl("DisclaimerDialog.qml"))
         }
     }

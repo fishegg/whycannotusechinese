@@ -37,7 +37,7 @@ ApplicationWindow
 {
     id: applicationwindow
 
-    property string version: "890809"
+    property string version: "1.0-2"
 
     initialPage: Component { FirstPage { } }
     cover: Qt.resolvedUrl("cover/CoverPage.qml")

@@ -52,5 +52,13 @@
         <source>推荐网站和程序</source>
         <translation type="unfinished"></translation>
     </message>
+    <message>
+        <source>致谢</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <source>十花十花十花，为了一个弱智问题让十花自己的代码也不能写</source>
+        <translation type="unfinished"></translation>
+    </message>
 </context>
 </TS>

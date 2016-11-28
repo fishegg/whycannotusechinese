@@ -39,13 +39,14 @@ Page {
 
     SilicaFlickable {
         id: flickable
-        width: parent.width
-        contentHeight: column.height
+        anchors.fill: parent
+        contentHeight: column.height + column.spacing
 
         Column {
             id: column
             width: parent.width
             spacing: Theme.paddingSmall
+
             PageHeader {
                 title: qsTr("程序信息")
             }
@@ -63,16 +64,17 @@ Page {
                 anchors.horizontalCenter: parent.horizontalCenter
                 text: version
             }
-            /*SectionHeader {
-                text: qsTr("Credit")
+            SectionHeader {
+                text: qsTr("致谢")
             }
             Label {
-                x: Theme.paddingMedium
-                width: parent.width - 2 * Theme.paddingMedium
+                x: Theme.paddingLarge
+                width: parent.width - 2 * Theme.paddingLarge
                 wrapMode: Text.WordWrap
-                text: qsTr("Thanks Simo Mattila who made TinyTodo and Arno Dekker who made Worldclock. Thanks BirdZhang, Chanxi, Saber and Yaliang for helping me in coding.")
+                font.pixelSize: Theme.fontSizeExtraLarge
+                text: qsTr("十花十花十花，为了一个弱智问题让十花自己的代码也不能写")
             }
-            Label {
+            /*Label {
                 x: Theme.paddingMedium
                 width: parent.width - 2 * Theme.paddingMedium
                 wrapMode: Text.WordWrap

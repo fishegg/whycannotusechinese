@@ -16,11 +16,12 @@ Dialog {
 
     SilicaFlickable {
         anchors.fill: parent
-        contentHeight: disclaimercolumn.height + Theme.paddingSmall
+        contentHeight: disclaimercolumn.height + disclaimercolumn.spacing
 
         Column {
             id: disclaimercolumn
             width: parent.width
+            spacing: Theme.paddingSmall
 
             DialogHeader {
                 title: qsTr("免责声明")
