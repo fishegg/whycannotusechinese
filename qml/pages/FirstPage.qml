@@ -36,7 +36,9 @@ import "../items"
 
 Page {
     id: firstpage
+    property string conf_version: settings.get_version()
     property bool accepted: settings.get_accepted_status()
+    property bool updated: settings.is_updated(conf_version,version)
 
     SettingsObject {
         id: settings
@@ -44,10 +46,14 @@ Page {
 
     Timer {
         interval: 50
-        running: accepted ? false : true
+        running: (accepted || !updated) ? false : true
         repeat: true
         triggeredOnStart: true
         onTriggered: { stop()
+            if(updated) {
+                settings.clean_conf()
+                settings.set_version(version)
+            }
             pageStack.push(Qt.resolvedUrl("DisclaimerDialog.qml"))
         }
     }

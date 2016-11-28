@@ -61,7 +61,7 @@ Page {
             }
             Label {
                 anchors.horizontalCenter: parent.horizontalCenter
-                text: "1.0"
+                text: version
             }
             /*SectionHeader {
                 text: qsTr("Credit")
@@ -88,18 +88,23 @@ Page {
                 text: qsTr("参考程序")
             }
             Label {
-                x: Theme.paddingMedium
+                x: Theme.paddingLarge
                 text: "十花的BDMusic"
             }
             Label {
-                x: Theme.paddingMedium
+                x: Theme.paddingLarge
+                text: "神鸟的一个"
+            }
+
+            Label {
+                x: Theme.paddingLarge
                 text: "steffen.foerster的CodeReader"
             }
             SectionHeader {
                 text: qsTr("作者")
             }
             Label {
-                x: Theme.paddingMedium
+                x: Theme.paddingLarge
                 text: "fishegg"
             }
             /*SectionHeader {
